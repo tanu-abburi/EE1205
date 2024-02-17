@@ -1,0 +1,115 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide}
+\usepackage{listings}
+\usepackage{gvv}
+\usepackage{braket}
+\def\inputGnumericTable{}
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{ifthen}
+\usepackage{lscape}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{GATE 2023 CH-58}
+\author{EE23BTECH11201 - Abburi Tanusha$^{*}$% <-this % stops a space
+}
+\maketitle
+\newpage
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\vspace{3cm}
+
+\maketitle
+\textbf{Question:} 
+A fresh catalyst is loaded into a reactor before the start of the following catalytic reaction:
+\begin{align*}
+  A \rightarrow \text{Products} 
+\end{align*}
+The catalyst gets deactivated over time. The instantaneous activity $a(t)$, at time $t$, is defined as the ratio of the rate of reaction $-r_A(t)$ (mol.$(g_{\text{cat}})^{-1}$hr$^{-1}$) to the rate of reaction with fresh catalyst. Controlled experimental measurements led to an empirical correlation:
+\begin{align*}
+ -r_A(t)' = -0.5t + 10
+ \end{align*}
+where $t$ is in hours.
+The activity of the catalyst at $t=10$ hours is given by (rounded off to one decimal place):\\
+\hfill(GATE 2023 CH)\\
+\textbf{Solution:} 
+\begin{table}[h!]
+\centering
+\resizebox{6cm}{!}{
+\input{tables/table.tex}
+}
+\caption{Given Parameters}
+\label{tab:my_label}
+\end{table}
+\begin{align}
+ -r_A(t)' &= -0.5t + 10 
+ \end{align}
+Integrating the rate expression with respect to time:
+\begin{align}
+ -r_A(t)' dt &= (-0.5t + 10) dt \\
+ -r_A(t) &= -0.25t^2 + 10t + C 
+ \end{align}
+Using the initial condition t = 0 ,where $-r_A(0) = 10$ \\
+\begin{align}
+ -r_A(0) &= -0.25(0)^2 + 10(0) + C \\
+ \implies C &=10\\
+ &= -0.25t^2 + 10t + 10 
+ \end{align}
+The activity a(t) is calculated by dividing the rate at any time 't' by the rate with fresh catalyst:\\
+\begin{align}
+ a(t) &= \frac{-r_A(t)}{-r_A(0)} \\
+  &= \frac{-0.25t^2 + 10t + 10}{-0.25(0)^2 + 10(0) + 10}\\ 
+  &= \frac{-0.25t^2 + 10t + 10}{10} 
+\end{align}
+Now, we calculate the activity at $t = 10$ hours:\\
+\begin{align}
+a(10) &= \frac{-0.25(10)^2 + 10(10) + 10}{10} \\
+ &= \frac{-25 + 100 + 10}{10} \\
+ &= \frac{85}{10} \\
+ &= 8.5
+\end{align}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=\columnwidth]{figs/gate_plot.png}
+\label{fig:plot}
+\caption{Activity of catalyst}
+\end{figure}
+\end{document}
+
