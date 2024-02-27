@@ -1,0 +1,26 @@
+
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\Large]
+\draw [](10,10.5) to[short] (10,12.75);
+\draw [](12.5,10.5) to[short] (12.5,12.75);
+\draw (10,12.75) to[C] (12.5,12.75);
+\draw (10.625,8.5) node[ieeestd buffer port, anchor=in](port){} (port.out) to[short] (12.25,8.5); \draw (port.in) to[short] (10.5,8.5);
+\draw [](12.25,8.5) to[short, -o] (14.5,8.5);
+\draw [](12.5,10.5) to[short] (12.5,8.5);
+\draw [](11.25,9.75) to[short] (11.25,8.75);
+\draw [](11.25,8.25) to[short] (11.25,7);
+\draw [short] (10.75,8.5) -- (8.5,8.5);
+\draw[] (11,8.25) to[short] (10,8.25);
+\draw (10,8.25) to (10,7.25) node[ground]{};
+\draw [](10,10.5) to[short] (10,8.5);
+\draw (7,8.5) to[sinusoidal voltage source, sources/symbol/rotate=auto,l={ \LARGE $Vin$}] (7,6);
+\draw (7,6) to (7,5.75) node[ground]{};
+\node [font=\Large] at (11,13.5) {1 nF};
+\node [font=\Large] at (5.75,7.25) {};
+\node [font=\Large] at (15,8) {Vout};
+\node [font=\Large] at (11.5,7.25) {-};
+\node [font=\Large] at (11.5,9.75) {+};
+\draw (10,10.75) to[R,l={ \Large $100k$}] (12.5,10.75);
+\draw (7,8.5) to[R,l={ \Large $10k$}] (8.5,8.5);
+\end{circuitikz}
+
